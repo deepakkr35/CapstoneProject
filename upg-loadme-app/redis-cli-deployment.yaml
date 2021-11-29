@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: redis
+  name: redis-cli
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        command:
+          - bash      
+          - "-c"
+          - "sleep 100000"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+      restartPolicy: Always 
+

@@ -1,0 +1,15 @@
+#Config Map provisioning
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-config
+  namespace: demo
+  labels:
+    app: redis
+data:
+  redis.conf: |-
+    dir /var/lib/redis
+    port 6379
+    bind 0.0.0.0
+    appendonly yes
+    protected-mode no
