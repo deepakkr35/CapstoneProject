@@ -4,16 +4,16 @@ resource "aws_vpc" "vpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = "assignment-vpc"
+    Name = "capstone-vpc"
   }
 }
 
-# creating internet gateway 
+# creating internet gateway
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name = "assignment-igw"
+    Name = "capstone-igw"
   }
 }
 
@@ -36,7 +36,7 @@ resource "aws_subnet" "public-subnet-1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "assigment-public-subnet-1"
+    Name = "capstone-public-subnet-1"
   }
 }
 
@@ -48,7 +48,7 @@ resource "aws_subnet" "public-subnet-2" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "assigment-public-subnet-2"
+    Name = "capstone-public-subnet-2"
   }
 }
 
@@ -60,7 +60,7 @@ resource "aws_subnet" "private-subnet-1" {
   map_public_ip_on_launch  = false
 
   tags      = {
-    Name    = "assigment-private-subnet-1"
+    Name    = "capstone-private-subnet-1"
   }
 }
 
@@ -72,7 +72,7 @@ resource "aws_subnet" "private-subnet-2" {
   map_public_ip_on_launch  = false
 
   tags      = {
-    Name    = "assigment-private-subnet-2"
+    Name    = "capstone-private-subnet-2"
   }
 }
 
@@ -86,7 +86,7 @@ resource "aws_route_table" "public-route-table" {
   }
 
   tags       = {
-    Name     = "assignment-public-route-table"
+    Name     = "capstone-public-route-table"
   }
 }
 
